@@ -5,6 +5,25 @@
         <title>Vue Project</title>
     </head>
     
+    <body>
+      <div id="app">
+      <h1>Explore the Rijksmuseum</h1>
+      <form v-on:submit.prevent="search">
+        <input v-model="searchInput" placeholder="Enter a key word to search"></input>
+        <br>
+        <button type="submit">Search</button>
+      </form>
+      <p></p>
+    </div>
+    
+    <div id="searchResults"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+    <script text="type/javascript" src="script.js"></script>
+    </body>
+    
     <footer>
       <p>
         <a href="https://github.com/tesshoughton/CP_Vue.git">GitHub Repository</a><br>
