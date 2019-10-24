@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Explore Rijks Museum</title>
+        <title>Explore the Rijksmuseum</title>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap" rel="stylesheet">
     </head>
@@ -12,21 +12,21 @@
       <h1>Explore the Rijksmuseum</h1>
       <form v-on:submit.prevent="search">
         <input v-model="searchInput" placeholder="Enter a key word to search"></input>
-        <br>
+        
         <button type="submit">Search</button>
       </form>
       <p></p>
-      <table class="table">
-        <thead>
+      <table id="my_table">
+        <thead id="table_head">
             <tr>
-                <th v-for="column in columns"> {{column}}</th>
+                <th v-for="column in columns"> {{ column }}</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="row in rows">
-                <td>{{ row.title }}</td>
-                <td><img :src="row.work" alt="No Image Available"></td>
-                <td>{{ row.artist }}</td>
+                <td><a :href="row.title_link">{{ row.title }}</td>
+                <td><a :href="row.work_link"><img :src="row.work" alt="No Image Available"></td>
+                <td><a :href="row.artist_link">{{ row.artist }}</td>
             </tr>
         </tbody>
       </table>
@@ -44,6 +44,7 @@
       <p>
         <a href="https://github.com/tesshoughton/CP_Vue.git">GitHub Repository</a><br>
         Page owned and created by Chopelas, McBride, & Mika in 2019.<br>
+        This page was developed using the Rijksmuseum API.
       </p>
     </footer>
 </html>
